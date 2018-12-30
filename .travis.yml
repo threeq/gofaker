@@ -5,7 +5,7 @@ go:
   - "1.12"
 
 before_install:
-  - go
+  - go version
 
 script:
   - go test
