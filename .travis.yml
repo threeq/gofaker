@@ -8,4 +8,7 @@ before_install:
   - go version
 
 script:
-  - go test
+  - go test -v -cover -coverprofile=coverage.out
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
