@@ -1,0 +1,11 @@
+language: go
+
+go:
+  - "1.11"
+  - "1.12"
+
+before_install:
+  - go
+
+script:
+  - go test
