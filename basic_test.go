@@ -17,7 +17,6 @@ func TestBool(t *testing.T) {
 		}
 	})
 
-	println(trueNum, falseNum)
 	assertion.True(trueNum > 0)
 	assertion.True(falseNum > 0)
 }
@@ -34,7 +33,32 @@ func TestBoolean(t *testing.T) {
 		}
 	})
 
-	println(trueNum, falseNum)
+	assertion.True(trueNum > 0)
+	assertion.True(falseNum > 0)
+
+	trueNum = 0
+	falseNum = 0
+	batch(100, func() {
+		if Boolean(0, 9, true) {
+			trueNum ++
+		} else {
+			falseNum++
+		}
+	})
+
+	assertion.True(trueNum > 0)
+	assertion.True(falseNum > 0)
+
+	trueNum = 0
+	falseNum = 0
+	batch(100, func() {
+		if Boolean(-1, 1, true) {
+			trueNum ++
+		} else {
+			falseNum++
+		}
+	})
+
 	assertion.True(trueNum > 0)
 	assertion.True(falseNum > 0)
 }
@@ -81,6 +105,8 @@ func TestIntN(t *testing.T) {
 	})
 
 	assertion.Equal(2, len(set))
+
+	assertion.Equal(4, IntN(4,4))
 }
 
 func TestFloat(t *testing.T) {
