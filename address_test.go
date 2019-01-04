@@ -82,8 +82,3 @@ func TestZip(t *testing.T) {
 	})
 }
 
-func batch(size int, fn func()) {
-	for i := 0; i < size; i++ {
-		fn()
-	}
-}

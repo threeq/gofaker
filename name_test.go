@@ -45,7 +45,7 @@ func TestName(t *testing.T) {
 func TestNameFirstCN(t *testing.T) {
 	assertion := assert.New(t)
 	batch(1000, func() {
-		f := NameFirstCN()
+		f := CNameFirst()
 		assertion.Contains(cnFirstNames, f)
 	})
 }
@@ -53,7 +53,7 @@ func TestNameFirstCN(t *testing.T) {
 func TestNameLastCN(t *testing.T) {
 	assertion := assert.New(t)
 	batch(1000, func() {
-		f := NameLastCN()
+		f := CNameLast()
 		assertion.Contains(cnLastNames, f)
 	})
 }
@@ -61,7 +61,7 @@ func TestNameLastCN(t *testing.T) {
 func TestNameCN(t *testing.T) {
 	assertion := assert.New(t)
 	batch(1000, func() {
-		f := NameCN()
+		f := CName()
 		assertion.True(utf8.RuneCountInString(f) == 2|| utf8.RuneCountInString(f) == 3, f + strconv.Itoa(len(f)))
 	})
 }

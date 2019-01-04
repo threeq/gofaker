@@ -41,7 +41,7 @@ func tree(addrs []*Addr) []*Addr {
 
 func buildAddrTree() []*Addr {
 	var fixed []*Addr
-	for id, name := range addressDcit {
+	for id, name := range addressDict {
 
 		getPid(id)
 

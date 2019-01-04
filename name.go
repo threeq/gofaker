@@ -74,14 +74,14 @@ var cnLastNames = strings.Split(
 		"皓轩",
 	" ")
 
-func NameFirstCN() string {
+func CNameFirst() string {
 	return cnFirstNames[IntN(0, len(cnFirstNames)-1)]
 }
 
-func NameLastCN() string {
+func CNameLast() string {
 	return cnLastNames[IntN(0, len(cnLastNames)-1)]
 }
 
-func NameCN() string {
-	return NameFirstCN() + NameLastCN()
+func CName() string {
+	return CNameFirst() + CNameLast()
 }
